@@ -137,13 +137,6 @@ export default function App() {
     setIsPlaying(false);
   };
 
-  const handleBooking = () => {
-    const phoneNumber = "966566964857"; // تم التحديث لرقمك السعودي
-    const message = "مرحباً، أود الاستفسار عن عرض الهوية البصرية (خصم 30%) من تيك توك";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
   return (
     <div className="min-h-screen bg-editorial-bg text-white font-sans selection:bg-white/20" dir="rtl">
       {/* Background Atmosphere */}
@@ -250,14 +243,18 @@ export default function App() {
                 )}
 
                 {currentSlide === SLIDES.length - 1 && (
-                  <motion.div
+                  <motion.a
                     initial={{ rotate: 0, scale: 0.8 }}
                     animate={{ rotate: -3, scale: 1 }}
-                    onClick={handleBooking}
-                    className="mt-6 bg-black text-white px-8 py-3 font-black shadow-[10px_10px_0px_rgba(255,255,255,0.1)] cursor-pointer hover:bg-neutral-800 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={`https://wa.me/966566964857?text=${encodeURIComponent("مرحباً، أود الاستفسار عن عرض الهوية البصرية (خصم 30%) من تيك توك")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 bg-black text-white px-8 py-3 font-black shadow-[10px_10px_0px_rgba(255,255,255,0.1)] cursor-pointer hover:bg-neutral-800 transition-colors relative z-50 inline-block decoration-none"
                   >
                     احجز الآن
-                  </motion.div>
+                  </motion.a>
                 )}
               </div>
             </motion.div>
