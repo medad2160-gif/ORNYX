@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Inter:wght@300;400;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Almarai", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Georgia", serif;
+  
+  --color-editorial-bg: #0F0F0F;
+  --color-editorial-accent: #FF4D00;
+  --color-editorial-surface: #151515;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-white bg-editorial-bg;
+  }
+}
+
+@layer components {
+  .editorial-header {
+    @apply text-[90px] leading-[0.85] font-black tracking-[-0.05em] uppercase;
+  }
+  
+  .editorial-tag {
+    @apply font-serif italic text-sm opacity-50;
+  }
+}
