@@ -33,21 +33,21 @@ interface SlideContent {
 const SLIDES: SlideContent[] = [
   {
     id: 1,
-    title: "نصمم المستقبل البصري.",
-    subtitle: "نحول رؤيتك إلى واقع ملموس",
-    icon: <div className="w-16 h-16 border-2 border-editorial-accent flex items-center justify-center font-black text-2xl text-editorial-accent">BR.</div>,
+    title: "GROWX TECHNOLOGY",
+    subtitle: "نصمم المستقبل البصري لعلامتكم التجارية",
+    icon: <img src="/growx_logo.png" alt="GrowX Logo" className="w-24 h-24 object-contain" referrerPolicy="no-referrer" />,
     bgClass: "bg-editorial-bg",
     accentText: "text-editorial-accent"
   },
   {
     id: 2,
-    title: "هوية بصرية استثنائية",
-    subtitle: "كل ما يحتاجه البراند الخاص بك",
+    title: "خدماتنا المتميزة",
+    subtitle: "الجودة والاحترافية في كل تفصيل",
     items: [
-      "تصميم شعارات احترافية",
-      "هويات بصرية متكاملة",
-      "تصميم واجهات مستخدم UI/UX",
-      "براندينج للشركات الناشئة"
+      "تصميم اللوجو (الشعارات)",
+      "تصميم الهويات البصرية",
+      "تصاميم السوشيال ميديا",
+      "GrowX Tech الحلول المتكاملة"
     ],
     icon: <Layers className="w-16 h-16 text-editorial-accent" />,
     bgClass: "bg-editorial-surface border-r border-white/5",
@@ -55,13 +55,13 @@ const SLIDES: SlideContent[] = [
   },
   {
     id: 3,
-    title: "لماذا تختارنا؟",
-    subtitle: "التميز هو هدفنا الوحيد",
+    title: "لماذا تختار GrowX؟",
+    subtitle: "خبرة تقنية وإبداع فني",
     items: [
-      "تصاميم فريدة وغير مكررة",
-      "فهم عميق لسوق الشركات الناشئة",
-      "سرعة في التنفيذ واحترافية عالية",
-      "دعم فني واستشارات مجانية"
+      "تصاميم حصرية ومبتكرة",
+      "سرعة فائقة في التنفيذ",
+      "دعم فني مستمر ومتكامل",
+      "تطوير مستمر لهوية البراند"
     ],
     icon: <ShieldCheck className="w-16 h-16 text-editorial-accent" />,
     bgClass: "bg-editorial-bg",
@@ -69,13 +69,13 @@ const SLIDES: SlideContent[] = [
   },
   {
     id: 4,
-    title: "الفائدة / WHY US",
-    subtitle: "نمو أسرع لعلامتك التجارية",
+    title: "الفائدة / WHY GrowX",
+    subtitle: "نمو أسرع وحضور أقوى برؤية GrowX",
     items: [
-      "جذب العملاء المستهدفين",
-      "بناء ثقة فورية مع جمهورك",
-      "التميز والسيادة في مجالك",
-      "هوية بصرية تعيش طويلاً"
+      "جذب العملاء بلمسة احترافية",
+      "بناء ثقة فورية بظهور مميز",
+      "التميز التقني والفني في مجالك",
+      "هوية بصرية تدوم وتتطور"
     ],
     icon: <Rocket className="w-16 h-16 text-editorial-accent" />,
     bgClass: "bg-editorial-surface",
@@ -83,13 +83,13 @@ const SLIDES: SlideContent[] = [
   },
   {
     id: 5,
-    title: "خصم 30% وحصري",
-    subtitle: "على أول باقة هوية بصرية",
+    title: "عرض خاص: 3 ريال فقط!",
+    subtitle: "لفترة محدودة جداً وحصرياً",
     items: [
-      "Limitied Offer",
-      "تواصل معنا الآن واتساب",
-      "استشارة مجانية لأول 5 عملاء",
-      "ابدأ رحلة نجاحك اليوم"
+      "كل الخدمات بـ 3 ريال سعودي",
+      "تصميم لوجو + هوية + ميديا",
+      "تواصل معنا الآن عبر واتساب",
+      "GrowX: شريك نجاحك الأول"
     ],
     icon: <Zap className="w-16 h-16 text-editorial-accent" />,
     bgClass: "bg-editorial-accent text-black",
@@ -147,14 +147,14 @@ export default function App() {
       <div className="relative z-10 max-w-6xl mx-auto min-h-screen flex flex-col md:flex-row items-center justify-center p-6 gap-12">
         
         <div className="flex-1 space-y-6 hidden lg:block">
-           <div className="w-16 h-16 border-2 border-editorial-accent flex items-center justify-center font-black text-2xl text-editorial-accent">BR.</div>
+           <img src="/growx_logo.png" alt="GrowX Logo" className="w-20 h-20 object-contain mb-4" />
            <h2 className="text-7xl font-black leading-[0.9] tracking-tighter">
              نصمم<br/>
              <span className="text-editorial-accent underline decoration-4 underline-offset-8">المستقبل</span><br/>
              البصري.
            </h2>
            <p className="text-xl opacity-60 max-w-md leading-relaxed font-light">
-             نحول الشركات الناشئة إلى براندات عالمية من خلال هويات بصرية مبتكرة وشعارات احترافية تترك أثراً لا ينسى.
+             GrowX تحول الشركات الناشئة إلى براندات عالمية من خلال هويات بصرية مبتكرة وشعارات احترافية تترك أثراً لا ينسى.
            </p>
         </div>
 
@@ -248,7 +248,7 @@ export default function App() {
                     animate={{ rotate: -3, scale: 1 }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href={`https://wa.me/966566964857?text=${encodeURIComponent("مرحباً، أود الاستفسار عن عرض الهوية البصرية (خصم 30%) من تيك توك")}`}
+                    href={`https://wa.me/966566964857?text=${encodeURIComponent("مرحباً GrowX، أود الاستفسار عن عرض الـ 3 ريال لتصميم الهوية البصرية من تيك توك")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-6 bg-black text-white px-8 py-3 font-black shadow-[10px_10px_0px_rgba(255,255,255,0.1)] cursor-pointer hover:bg-neutral-800 transition-colors relative z-50 inline-block decoration-none"
@@ -268,6 +268,9 @@ export default function App() {
 
           {/* Editorial Social sidebar */}
           <div className="absolute right-4 bottom-32 z-40 flex flex-col gap-6 items-center">
+            <div className="w-10 h-10 border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md overflow-hidden">
+                <img src="/growx_logo.png" alt="X" className="w-full h-full object-contain p-1" />
+            </div>
             <div className="w-10 h-10 border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
                 <Star className="w-5 h-5 text-editorial-accent" />
             </div>
@@ -279,11 +282,11 @@ export default function App() {
           {/* Bottom Bar Styling */}
           <div className="absolute bottom-10 left-10 right-10 z-40">
             <div className="flex items-center gap-3">
-              <span className="text-sm font-black text-editorial-accent">@BRAND.STUDIO</span>
+              <span className="text-sm font-black text-editorial-accent">@GROWX.TECH</span>
               <div className="h-[1px] flex-1 bg-editorial-accent opacity-30 px-2" />
             </div>
             <p className="text-[10px] mt-2 font-serif italic text-white/50">
-              Creative Direction / Brand Identity / STARTUPS 
+              GrowX Technology / Brand Identity / STARTUPS 
             </p>
           </div>
         </div>
