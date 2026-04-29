@@ -29,13 +29,35 @@ interface SlideContent {
   accentText: string;
 }
 
+// --- Components ---
+const GrowXLogo = ({ className = "w-24 h-24", color = "currentColor", stacked = false }) => {
+  if (stacked) {
+    return (
+      <svg viewBox="0 0 240 240" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 120L120 20L180 120" stroke={color} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M85 120L145 20L205 120" stroke={color} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
+        <text x="120" y="175" fill={color} textAnchor="middle" style={{ font: 'black 48px Inter, sans-serif' }}>GROW X</text>
+        <text x="120" y="210" fill={color} textAnchor="middle" style={{ font: 'bold 14px Inter, sans-serif', letterSpacing: '6px' }}>TECHNOLOGY</text>
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 400 200" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 160L100 40L160 160" stroke={color} strokeWidth="12" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M100 160L160 40L220 160" stroke={color} strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" opacity="0.8"/>
+      <text x="240" y="115" fill={color} style={{ font: 'bold 60px Inter, sans-serif' }}>GROW X</text>
+      <text x="240" y="150" fill={color} style={{ font: '18px Inter, sans-serif', letterSpacing: '8px' }}>TECHNOLOGY</text>
+    </svg>
+  );
+};
+
 // --- Constants ---
 const SLIDES: SlideContent[] = [
   {
     id: 1,
     title: "GROWX TECHNOLOGY",
     subtitle: "نصمم المستقبل البصري لعلامتكم التجارية",
-    icon: <img src="/growx_logo.png" alt="GrowX Logo" className="w-24 h-24 object-contain" referrerPolicy="no-referrer" />,
+    icon: <GrowXLogo className="w-64 h-64" color="#FF4D00" stacked />,
     bgClass: "bg-editorial-bg",
     accentText: "text-editorial-accent"
   },
@@ -47,7 +69,7 @@ const SLIDES: SlideContent[] = [
       "تصميم اللوجو (الشعارات)",
       "تصميم الهويات البصرية",
       "تصاميم السوشيال ميديا",
-      "GrowX Tech الحلول المتكاملة"
+      "حلول براندينج متكاملة"
     ],
     icon: <Layers className="w-16 h-16 text-editorial-accent" />,
     bgClass: "bg-editorial-surface border-r border-white/5",
@@ -103,6 +125,12 @@ export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
@@ -139,6 +167,25 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-editorial-bg text-white font-sans selection:bg-white/20" dir="rtl">
+      {/* Splash Screen */}
+      <AnimatePresence>
+        {showSplash && (
+          <motion.div 
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-[100] bg-editorial-bg flex items-center justify-center"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <GrowXLogo className="w-64 h-64" color="#FF4D00" stacked />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Background Atmosphere */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-editorial-accent/20 rounded-full blur-[120px]" />
@@ -147,7 +194,7 @@ export default function App() {
       <div className="relative z-10 max-w-6xl mx-auto min-h-screen flex flex-col md:flex-row items-center justify-center p-6 gap-12">
         
         <div className="flex-1 space-y-6 hidden lg:block">
-           <img src="/growx_logo.png" alt="GrowX Logo" className="w-20 h-20 object-contain mb-4" />
+           <GrowXLogo className="w-24 h-12 mb-4" color="#FF4D00" />
            <h2 className="text-7xl font-black leading-[0.9] tracking-tighter">
              نصمم<br/>
              <span className="text-editorial-accent underline decoration-4 underline-offset-8">المستقبل</span><br/>
@@ -269,7 +316,7 @@ export default function App() {
           {/* Editorial Social sidebar */}
           <div className="absolute right-4 bottom-32 z-40 flex flex-col gap-6 items-center">
             <div className="w-10 h-10 border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md overflow-hidden">
-                <img src="/growx_logo.png" alt="X" className="w-full h-full object-contain p-1" />
+                <GrowXLogo className="w-8 h-4" color="#FF4D00" />
             </div>
             <div className="w-10 h-10 border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
                 <Star className="w-5 h-5 text-editorial-accent" />
