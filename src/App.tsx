@@ -34,8 +34,8 @@ const GrowXLogo = ({ className = "w-24 h-24", color = "currentColor", stacked = 
   if (stacked) {
     return (
       <svg viewBox="0 0 240 240" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 120L120 20L180 120" stroke={color} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M85 120L145 20L205 120" stroke={color} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
+        <path d="M47.5 120L107.5 20L167.5 120" stroke={color} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M72.5 120L132.5 20L192.5 120" stroke={color} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
         {showText && (
           <>
             <text x="120" y="175" fill={color} textAnchor="middle" style={{ font: 'black 48px Inter, sans-serif' }}>GROW X</text>
@@ -525,6 +525,7 @@ export default function App() {
           <GrowXLogo className="w-24 h-24 mb-4" color="#FF4D00" stacked showText={false} />
           <div className="space-y-4">
             <p className="text-[10px] opacity-40 uppercase tracking-[0.6em] font-black">© 2026 GROWX TECHNOLOGY STUDIOS. ALL RIGHTS RESERVED.</p>
+            <p className="text-[10px] opacity-25 uppercase tracking-widest font-bold font-serif italic">proudly by Ahmed Lashin - Mohamed yousry</p>
             <div className="flex items-center justify-center gap-6 text-[10px] uppercase tracking-widest font-bold opacity-30">
               <span className="hover:text-editorial-accent cursor-pointer transition-colors">Privacy Policy</span>
               <div className="w-1 h-1 bg-white rounded-full" />
